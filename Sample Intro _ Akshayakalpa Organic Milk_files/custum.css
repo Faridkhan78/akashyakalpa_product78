@@ -1,0 +1,96 @@
+.Rewards-modal .modal-content {
+    max-width: 360px;
+    box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    border: 0;
+}
+.Rewards-modal p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #2B2B2B;
+}
+.Rewards-modal button.btn {
+    background: #4385F5;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    height: 38px;
+}
+.Rewards-modal small {
+    font-size: 12px;
+    line-height: 12px;
+    color: #111B0C;
+    opacity: 0.7;
+}
+.Rewards-modal .card {
+    background: #E3F8F3;
+}
+.Rewards-modal .card::after {
+    content: "";
+    width: 144px;
+    height: 144px;
+    border-radius: 100%;
+    background: #C4F3E7;
+    opacity: 0.5;
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    z-index: 0;
+}
+.Rewards-modal .card::before {
+    content: "";
+    background-image: url(../image/coin.png);
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 70px;
+    height: 68px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.Rewards-modal .card>span {
+    font-size: 12px;
+    line-height: 16px;
+    color: #828282;
+}
+.Rewards-modal .card>label {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 24px;
+    color: #2B2B2B;
+}
+.Rewards-modal .btn-close {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: 1;
+    top: -80px;
+    color: #fff;
+    background-color: #1A1A1A;
+    opacity: 1;
+    border-radius: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: none;
+}
+@media(max-width:767px) {
+    .Rewards-modal .modal-dialog {
+        max-width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) !important;
+        margin: 0;
+        width: 100%;
+        min-height: auto;
+   }
+    .Rewards-modal .modal-content {
+        width: 100%;
+        max-width: 100%;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+   }
+}
