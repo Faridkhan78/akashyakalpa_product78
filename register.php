@@ -7,6 +7,7 @@
     <title>Checkout Akshyakalpa</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -43,39 +44,38 @@
 </head>
 
 <body>
-<?php
 
+<?php
 include 'connection.php';
 
+if (isset($_POST['submit'])) {
+  $name = $_POST['name'];
+  $mobile = $_POST['mobile'];
+  $email = $_POST['email'];
+  $gender = $_POST['gender'];
 
+  $sql = "select mobile from  register where mobile ='$mobile'";
+  $result = mysqli_query($conn, $sql);
 
-if(isset($_POST['submit'])) {
-    // print_r($_POST);
-    // exit;
+  if (mysqli_num_rows($result) > 0) {
+    echo '<script>alert("user allready register here...")</script>';
+  } else {
 
-    $name = $_POST['name'];
-    $phno = $_POST['mobile'];
-    $email = $_POST['email'];
-    $gender = $_POST['gender'];
-
-
-    //   $sql = "select mobile from register where mobile='$phno'";
-    //   $result = mysqli_query($conn, $sql);
-
-    //   if (mysqli_num_rows($result) > 0) {
-    //     // header("location:order.php");
-    //   } else {
-    $sql = "insert into register (name,mobile,email,gender) values('$name','$phno','$email','$gender')";
+    //$sql = "insert into register (customer_name,customer_number,customer_email,customer_gender)values ('$name','$mobile','$email','$gender')";
+    $sql = "insert into register (name,mobile,email,gender) values('$name','$mobile','$email','$gender')";
     $result = mysqli_query($conn, $sql);
-    if ($result === true) {
-        echo "inserted";
+
+    if ($result) {
+      header("location:address.php");
     } else {
-        echo "not Inserted";
+      echo "invalid error";
     }
-    // header("location:register.php");
-    //   }
+  }
 }
-?> 
+?>
+
+
+
     <div class="login-form">
         <form action="" method="post">
             <!-- <i class="fa fa-phone" aria-hidden="true"></i> -->
