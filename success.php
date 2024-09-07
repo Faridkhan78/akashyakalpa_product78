@@ -30,7 +30,7 @@
     <div class="row justify-content-center">
       <div class="col-md-6  p-3">
         <!-- <h3 class="text-center"> Your Order && Address Detail</h3> -->
-        <h1 class="animate__animated animate__bounce">Your Order and Address Details</h1>
+        <h1 class="animate__animated animate__bounce">Successfull Order and Address Details</h1>
         <div class="form-control m-2">
           <h5>Adress   &nbsp; &nbsp;  <?php echo $row['customer_address']; ?> </h5>
         </div>

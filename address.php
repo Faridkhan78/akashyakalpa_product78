@@ -39,16 +39,16 @@
 </head>
 <?php
 include 'connection.php';
-
 session_start();
-if (isset($_SESSION['data'])) {
 
+if (isset($_SESSION['data'])) {
+  
   $stud = $_SESSION['data'];
-  // print_r($stud);
-  // exit;
+ 
 }
 if (isset($_POST['submit'])) {
-
+  
+ 
   $image = $_POST['image'];
   $pname = $_POST['name'];
   $desc = $_POST['description'];

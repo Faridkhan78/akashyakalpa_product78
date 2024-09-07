@@ -58,7 +58,7 @@
 
 
     $_SESSION['data'] = $student1;
-    // print_r($_SESSION['data']);
+   
   }
 
   ?>
